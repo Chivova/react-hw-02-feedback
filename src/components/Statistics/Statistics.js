@@ -1,10 +1,20 @@
-const Statistics = ({ options }) => {
+const Statistics = ({
+  good,
+  neutral,
+  bad,
+  totalFeedback,
+  positiveFeedbackPercentage,
+}) => {
   return (
-    <ul>
-      {options.map(option => (
-        <li>{option}</li>
-      ))}
-    </ul>
+    <div>
+      <ul>
+        <li>Good:{good}</li>
+        <li>Neutral:{neutral}</li>
+        <li>Bad:{bad}</li>
+      </ul>
+      <p>Total: {totalFeedback()}</p>
+      {/* <p>Positive feedback:{positiveFeedbackPercentage()}%</p> */}
+    </div>
   );
 };
 
