@@ -1,9 +1,15 @@
 import { Component, Fragment } from 'react';
-import FeedbackOptions from './components/FeedbackOptions/FeedbackOptions';
-import Section from './components/Section/Section';
-import Statistics from './components/Statistics/Statistics';
-import Notification from './components/Notification/Notification';
+import PropTypes from 'prop-types';
+import FeedbackOptions from './components/FeedbackOptions';
+import Section from './components/Section';
+import Statistics from './components/Statistics';
+import Notification from './components/Notification';
+
 class App extends Component {
+  static propTypes = {
+    key: PropTypes.arrayOf(PropTypes.number.isRequired),
+  };
+
   state = {
     good: 0,
     neutral: 0,
@@ -21,9 +27,12 @@ class App extends Component {
     return Object.values(this.state).reduce((total, value) => total + value, 0);
   };
 
-  // countPositiveFeedbackPercentage = () => {
+  countPositiveFeedbackPercentage = () => {
+    const { good } = this.state;
+    const totalFeedback = this.countTotalFeedback();
 
-  // }
+    return Math.round((good / totalFeedback) * 100);
+  };
 
   render() {
     const options = Object.keys(this.state);
@@ -42,8 +51,8 @@ class App extends Component {
               good={good}
               neutral={neutral}
               bad={bad}
-              totalFeedback={this.countTotalFeedback}
-              positiveFeedbackPercentage={this.countPositiveFeedbackPercentage}
+              totalFeedback={this.countTotalFeedback()}
+              positiveFeedbackPerce={this.countPositiveFeedbackPercentage()}
             />
           </Section>
         ) : (

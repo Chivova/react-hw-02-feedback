@@ -1,0 +1,15 @@
+.btn {
+  padding: 10px 20px;
+  margin-right: 20px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 15%);
+  background-color: #2196f3;
+  color: whitesmoke;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: whitesmoke;
+  color: #2196f3;
+}

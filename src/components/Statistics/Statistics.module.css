@@ -1,0 +1,23 @@
+.statisticsList {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+}
+
+.statisticsItem {
+  margin-right: 15px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.totalFeedbackText {
+  font-weight: 700;
+  font-size: 22px;
+  color: #fff;
+}
+
+.perFeedbackText {
+  font-weight: 900;
+  font-size: 24px;
+  color: #2196f3;
+}

@@ -1,9 +1,16 @@
+import { Fragment } from 'react';
+import PropTypes from 'prop-types';
+
 const Section = ({ title, children }) => {
   return (
-    <div>
+    <Fragment>
       <h1>{title}</h1>
       {children}
-    </div>
+    </Fragment>
   );
 };
 export default Section;
+
+Section.propTypes = {
+  title: PropTypes.string.isRequired,
+};
